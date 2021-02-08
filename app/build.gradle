@@ -3,6 +3,7 @@ plugins {
   id 'kotlin-android'
   id 'kotlin-android-extensions'
   id 'kotlin-kapt'
+  id "org.jlleitschuh.gradle.ktlint"
 }
 
 android {
@@ -30,6 +31,17 @@ android {
   kotlinOptions {
     jvmTarget = '1.8'
   }
+  ktlint {
+    android.set(true)
+    outputColorName.set("RED")
+    additionalEditorconfigFile.set(file(".editorconfig"))
+
+    reporters {
+      reporter "plain"
+      reporter "checkstyle"
+      reporter "html"
+    }
+  }
 }
 
 dependencies {
@@ -46,6 +58,20 @@ dependencies {
   implementation developmentDependencies.viewModel
   implementation developmentDependencies.liveData
   implementation developmentDependencies.coreKtx
+
+  // Core modules
+  implementation project(':core-api')
+  implementation project(':core-android')
+  implementation project(':common-utils')
+  implementation project(':common-plugins')
+  implementation project(':common-navigation')
+  implementation project(':common-extension')
+
+  // Hilt
+  implementation developmentDependencies.hilt
+  implementation developmentDependencies.hiltViewModel
+  kapt developmentDependencies.hiltAndroidCompiler
+  kapt developmentDependencies.hiltCompiler
 
   testImplementation testDependencies.junit
   androidTestImplementation testDependencies.androidJunit

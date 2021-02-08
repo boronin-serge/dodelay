@@ -1,2 +1,8 @@
+include ':common-navigation'
+include ':common-plugins'
+include ':core-android'
+include ':common-extension'
+include ':common-utils'
+include ':core-api'
 include ':app'
 rootProject.name = "dodelay"
