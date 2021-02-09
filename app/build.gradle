@@ -28,9 +28,8 @@ android {
     sourceCompatibility JavaVersion.VERSION_1_8
     targetCompatibility JavaVersion.VERSION_1_8
   }
-  kotlinOptions {
-    jvmTarget = '1.8'
-  }
+  buildFeatures { viewBinding true }
+  kotlinOptions { jvmTarget = ext.jvmTargetVersion }
   ktlint {
     android.set(true)
     outputColorName.set("RED")
@@ -72,6 +71,10 @@ dependencies {
   implementation developmentDependencies.hiltViewModel
   kapt developmentDependencies.hiltAndroidCompiler
   kapt developmentDependencies.hiltCompiler
+
+  // Jetpack Navigation
+  implementation developmentDependencies.jetpackNavFragment
+  implementation developmentDependencies.jetpackNavUi
 
   testImplementation testDependencies.junit
   androidTestImplementation testDependencies.androidJunit

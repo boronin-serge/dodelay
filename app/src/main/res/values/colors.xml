@@ -1,10 +1,37 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="purple_200">#FFBB86FC</color>
-  <color name="purple_500">#FF6200EE</color>
-  <color name="purple_700">#FF3700B3</color>
-  <color name="teal_200">#FF03DAC5</color>
-  <color name="teal_700">#FF018786</color>
-  <color name="black">#FF000000</color>
-  <color name="white">#FFFFFFFF</color>
+
+  <!--region Base-->
+
+  <color name="dark">#000017</color>
+  <color name="white">#fff</color>
+  <color name="green">#00EE18</color>
+  <color name="blue">#0075EE</color>
+  <color name="gray">#9B9B9B</color>
+  <color name="lightBlue">#65B0FF</color>
+  <color name="errorColor">#EB5757</color>
+  <color name="colorShadow">#59000000</color>
+
+  <!--endregion-->
+
+
+  <!--region Common-->
+
+  <color name="colorHint">@color/gray</color>
+  <color name="colorAccent">@color/green</color>
+
+  <!--endregion-->
+
+
+  <!--region Light Theme-->
+
+  <color name="colorPrimaryTextColor">@color/dark</color>
+  <color name="colorHintTextColor">@color/gray</color>
+  <color name="colorPrimary">@color/blue</color>
+  <color name="colorPrimaryLight">@color/lightBlue</color>
+  <color name="colorPrimaryDark">@color/gray</color>
+  <color name="colorWindowBackground">@color/white</color>
+
+  <!--endregion-->
+
 </resources>

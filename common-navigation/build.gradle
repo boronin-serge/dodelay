@@ -23,4 +23,8 @@ dependencies {
   // develop
   implementation developmentDependencies.coreKtx
   implementation developmentDependencies.kotlinStdlibJdk7
+
+  // jetpack navigation
+  implementation developmentDependencies.jetpackNavFragment
+  implementation developmentDependencies.jetpackNavUi
 }

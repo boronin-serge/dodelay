@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <color name="colorPrimaryTextColor">@color/dark</color>
+  <color name="colorHintTextColor">@color/gray</color>
+  <color name="colorPrimary">@color/blue</color>
+  <color name="colorPrimaryLight">@color/lightBlue</color>
+  <color name="colorPrimaryDark">@color/gray</color>
+  <color name="colorWindowBackground">@color/white</color>
+</resources>

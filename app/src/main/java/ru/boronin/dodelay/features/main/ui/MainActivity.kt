@@ -1,7 +1,8 @@
-package ru.boronin.dodelay
+package ru.boronin.dodelay.features.main.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import ru.boronin.dodelay.R
 
 class MainActivity : AppCompatActivity() {
   override fun onCreate(savedInstanceState: Bundle?) {
