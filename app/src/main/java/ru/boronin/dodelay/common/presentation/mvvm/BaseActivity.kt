@@ -16,7 +16,7 @@ abstract class BaseActivity : AppCompatActivity() {
   }
 
   override fun onCreate(savedInstanceState: Bundle?) {
-    setTheme(R.style.Theme_Dodelay)
+    setTheme(R.style.AppTheme)
     super.onCreate(savedInstanceState)
     setContentView(binding.root)
   }
