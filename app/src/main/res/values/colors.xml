@@ -29,8 +29,10 @@
   <color name="colorHintTextColor">@color/gray</color>
   <color name="colorPrimary">@color/blue</color>
   <color name="colorPrimaryLight">@color/lightBlue</color>
-  <color name="colorPrimaryDark">@color/gray</color>
+  <color name="colorPrimaryDark">@color/lightBlue</color>
   <color name="colorWindowBackground">@color/white</color>
+  <color name="colorAlertButton">@color/dark</color>
+  <color name="colorBottomSheetBackground">@color/white</color>
 
   <!--endregion-->
 

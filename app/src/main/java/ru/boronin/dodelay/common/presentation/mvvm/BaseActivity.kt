@@ -3,6 +3,7 @@ package ru.boronin.dodelay.common.presentation.mvvm
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.viewbinding.ViewBinding
+import ru.boronin.common.extension.core.setTransparentStatusBar
 import ru.boronin.common.navigation.jetpack.JetpackNavHandlerImpl
 import ru.boronin.core.api.navigator.JetpackNavigatorHandler
 import ru.boronin.dodelay.R

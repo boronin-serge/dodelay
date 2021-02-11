@@ -6,4 +6,6 @@
   <color name="colorPrimaryLight">@color/lightBlue</color>
   <color name="colorPrimaryDark">@color/gray</color>
   <color name="colorWindowBackground">@color/white</color>
+  <color name="colorAlertButton">@color/white</color>
+  <color name="colorBottomSheetBackground">@color/white</color>
 </resources>

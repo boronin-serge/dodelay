@@ -7,4 +7,14 @@
     <item name="colorAccent">@color/colorAccent</item>
     <item name="android:windowBackground">@color/colorWindowBackground</item>
   </style>
+
+  <style name="AlertDialogTheme" parent="ThemeOverlay.MaterialComponents.Dialog.Alert">
+    <item name="buttonBarNegativeButtonStyle">@style/negativeButtonStyle</item>
+    <item name="buttonBarPositiveButtonStyle">@style/positiveButtonStyle</item>
+    <item name="android:textColorPrimary">@color/colorPrimaryTextColor</item>
+    <item name="android:windowBackground">@drawable/bg_alert</item>
+    <item name="android:windowMinWidthMinor">280dp</item>
+    <item name="android:windowElevation">38dp</item>
+  </style>
+
 </resources>

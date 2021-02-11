@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <style name="backButtonStyle">
+    <item name="android:layout_width">32dp</item>
+    <item name="android:layout_height">32dp</item>
+    <item name="android:src">@drawable/ic_arrow_back</item>
+    <item name="android:tint">@color/colorPrimaryTextColor</item>
+    <item name="android:background">?android:selectableItemBackgroundBorderless</item>
+    <item name="android:layout_marginTop">24dp</item>
+    <item name="android:layout_marginStart">16dp</item>
+    <item name="android:layout_marginBottom">14dp</item>
+    <item name="android:padding">2dp</item>
+  </style>
+
+  <style name="negativeButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <item name="android:textColor">@color/colorAlertButton</item>
+  </style>
+
+  <style name="positiveButtonStyle" parent="Widget.MaterialComponents.Button.TextButton.Dialog">
+    <item name="android:textColor">@color/colorAlertButton</item>
+  </style>
+
+  <style name="bottomSheetDialogStyle" parent="Theme.Design.BottomSheetDialog">
+    <item name="android:colorBackground">@android:color/transparent</item>
+  </style>
+
+
+  <!--region fonts-->
+
+  <style name="titleStyle">
+    <item name="android:textSize">26sp</item>
+    <item name="android:textColor">@color/colorPrimaryTextColor</item>
+  </style>
+
+  <style name="subtitleStyle">
+    <item name="android:textSize">18sp</item>
+    <item name="android:textColor">@color/colorPrimaryTextColor</item>
+  </style>
+
+  <style name="hintStyle">
+    <item name="android:textSize">14sp</item>
+    <item name="android:textColor">@color/colorPrimaryTextColor</item>
+  </style>
+
+  <style name="smallHintStyle">
+    <item name="android:textSize">12sp</item>
+    <item name="android:textColor">@color/colorPrimaryTextColor</item>
+  </style>
+
+  <!--endregion-->
+
+</resources>

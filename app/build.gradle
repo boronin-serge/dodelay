@@ -2,7 +2,8 @@ plugins {
   id 'com.android.application'
   id 'kotlin-android'
   id 'kotlin-kapt'
-  id "org.jlleitschuh.gradle.ktlint"
+  id 'org.jlleitschuh.gradle.ktlint'
+  id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -60,10 +61,12 @@ dependencies {
   // Core modules
   implementation project(':core-api')
   implementation project(':core-android')
+  implementation project(':core-rx-schedulers-impl')
   implementation project(':common-utils')
   implementation project(':common-plugins')
   implementation project(':common-navigation')
   implementation project(':common-extension')
+  implementation project(':common-rx-utils')
 
   // Lifecycle
   implementation developmentDependencies.lifecycleCommon
@@ -77,6 +80,13 @@ dependencies {
   // Jetpack Navigation
   implementation developmentDependencies.jetpackNavFragment
   implementation developmentDependencies.jetpackNavUi
+
+  // RxBinding
+  implementation dependencies.rxAndroid
+  implementation dependencies.rxBinding
+  implementation dependencies.rxBindingCore
+  implementation dependencies.rxBindingRecyclerView
+  implementation dependencies.rxBindingSwipeRefreshLayout
 
   testImplementation testDependencies.junit
   androidTestImplementation testDependencies.androidJunit
