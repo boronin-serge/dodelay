@@ -4,10 +4,12 @@
   <!--region Base-->
 
   <color name="dark">#000017</color>
+  <color name="lightDark">#0B0B23</color>
   <color name="white">#fff</color>
   <color name="green">#00EE18</color>
   <color name="blue">#0075EE</color>
   <color name="gray">#9B9B9B</color>
+  <color name="lightGray">#DFDFDF</color>
   <color name="lightBlue">#65B0FF</color>
   <color name="errorColor">#EB5757</color>
   <color name="colorShadow">#59000000</color>
@@ -25,13 +27,17 @@
 
   <!--region Light Theme-->
 
-  <color name="colorPrimaryTextColor">@color/dark</color>
+  <color name="colorPrimaryDarkTextColor">@color/dark</color>
+  <color name="colorPrimaryLightTextColor">@color/white</color>
   <color name="colorHintTextColor">@color/gray</color>
   <color name="colorPrimary">@color/blue</color>
   <color name="colorPrimaryLight">@color/lightBlue</color>
   <color name="colorPrimaryDark">@color/lightBlue</color>
   <color name="colorWindowBackground">@color/white</color>
+  <color name="colorHomeHeader">@color/dark</color>
+  <color name="colorStatusBar">@color/lightDark</color>
   <color name="colorAlertButton">@color/dark</color>
+  <color name="colorControlDisabled">@color/lightGray</color>
   <color name="colorBottomSheetBackground">@color/white</color>
 
   <!--endregion-->

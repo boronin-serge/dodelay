@@ -1,3 +1,10 @@
 <resources>
-  <string name="app_name">dodelay</string>
+  <string name="app_name">Dodelay</string>
+
+  <!--region Home-->
+
+  <string name="home_addProduct">Add product</string>
+
+  <!--endregion-->
+
 </resources>

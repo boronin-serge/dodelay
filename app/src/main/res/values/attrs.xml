@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+  <declare-styleable name="ActionButton">
+    <attr format="color" name="ab_textColor" />
+    <attr format="dimension" name="ab_textSize" />
+    <attr format="string" name="ab_text" />
+    <attr format="integer" name="ab_icon" />
+    <attr format="boolean" name="ab_enable" />
+  </declare-styleable>
+
+  <declare-styleable name="OutlinedEditText">
+    <attr name="hint" format="string" />
+  </declare-styleable>
+</resources>

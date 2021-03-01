@@ -7,19 +7,28 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.viewbinding.ViewBinding
+import ru.boronin.common.navigation.AppNavigator
 import ru.boronin.common.plugins.alert.AlertUIDelegatePlugin
 import ru.boronin.common.plugins.alert.AlertUIDelegatePluginImpl
 import ru.boronin.common.plugins.backbutton.BackButtonUIDelegatePlugin
 import ru.boronin.common.plugins.backbutton.BackButtonUIDelegatePluginImpl
+import ru.boronin.common.plugins.loading.LoadingUIDelegatePlugin
+import ru.boronin.common.plugins.loading.LoadingUIDelegatePluginImpl
 import ru.boronin.common.plugins.title.TitleUIDelegatePlugin
 import ru.boronin.common.plugins.title.TitleUIDelegatePluginImpl
 import ru.boronin.core.android.view.delegate.UIDelegatePlugin
 import ru.boronin.core.android.view.delegate.UIDelegatePluginEvent
 import ru.boronin.dodelay.R
+import ru.boronin.dodelay.common.presentation.plugins.NavigationUIDelegatePlugin
+import ru.boronin.dodelay.common.presentation.plugins.NavigationUIDelegatePluginImpl
 
 private const val DEFAULT_LAYOUT = R.layout.base_fragment
 
 abstract class BaseFragment(
+  private val navigationPlugin: NavigationUIDelegatePluginImpl = NavigationUIDelegatePluginImpl(
+    hostFragmentId = R.id.navFragment,
+    rootHostFragmentId = R.id.navFragment,
+  ),
   private val alertPlugin: AlertUIDelegatePluginImpl = AlertUIDelegatePluginImpl(
     R.style.AlertDialogTheme
   ),
@@ -28,20 +37,24 @@ abstract class BaseFragment(
   ),
   private val backButtonPlugin: BackButtonUIDelegatePluginImpl = BackButtonUIDelegatePluginImpl(
     R.id.btn_back
+  ),
+  private val loadingPlugin: LoadingUIDelegatePluginImpl = LoadingUIDelegatePluginImpl(
+    R.id.vgLoading
   )
 ) : Fragment(),
   AlertUIDelegatePlugin by alertPlugin,
   TitleUIDelegatePlugin by titlePlugin,
+  NavigationUIDelegatePlugin by navigationPlugin,
+  LoadingUIDelegatePlugin by loadingPlugin,
   BackButtonUIDelegatePlugin by backButtonPlugin {
 
   private val plugins = mutableListOf<UIDelegatePlugin<Fragment>>()
 
   protected val subscriptions = AutoDisposable()
+
   protected abstract val binding: ViewBinding
 
-  init {
-    initUIDelegatePlugins()
-  }
+  protected val navigator = DodelayNavigator()
 
   override fun onAttach(context: Context) {
     super.onAttach(context)
@@ -57,6 +70,12 @@ abstract class BaseFragment(
     sendUIDelegatePluginEvent(UIDelegatePluginEvent.OnDetach)
   }
 
+  override fun onCreate(savedInstanceState: Bundle?) {
+    super.onCreate(savedInstanceState)
+    plugins.clear()
+    initUIDelegatePlugins()
+  }
+
   override fun onCreateView(
     inflater: LayoutInflater,
     container: ViewGroup?,
@@ -68,15 +87,13 @@ abstract class BaseFragment(
 
   override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
     super.onViewCreated(view, savedInstanceState)
-
     sendUIDelegatePluginEvent(UIDelegatePluginEvent.OnViewBound(view))
-
-    subscriptions.clear() // Lifecycle doesn't have onViewCreated state
+    bindNavigator(navigator as AppNavigator)
+    subscriptions.clear()
   }
 
   override fun onDestroy() {
     super.onDestroy()
-
     sendUIDelegatePluginEvent(UIDelegatePluginEvent.Release)
   }
 
@@ -90,6 +107,8 @@ abstract class BaseFragment(
     addUIDelegatePlugin(alertPlugin)
     addUIDelegatePlugin(backButtonPlugin)
     addUIDelegatePlugin(titlePlugin)
+    addUIDelegatePlugin(loadingPlugin)
+    addUIDelegatePlugin(navigationPlugin)
   }
 
   private fun addUIDelegatePlugin(plugin: UIDelegatePlugin<Fragment>) {

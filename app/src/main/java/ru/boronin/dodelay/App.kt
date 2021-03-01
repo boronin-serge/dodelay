@@ -1,4 +1,4 @@
-package ru.boronin.dodelay;
+package ru.boronin.dodelay
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp

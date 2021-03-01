@@ -1,11 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-  <color name="colorPrimaryTextColor">@color/dark</color>
+  <color name="colorPrimaryDarkTextColor">@color/dark</color>
   <color name="colorHintTextColor">@color/gray</color>
   <color name="colorPrimary">@color/blue</color>
   <color name="colorPrimaryLight">@color/lightBlue</color>
   <color name="colorPrimaryDark">@color/gray</color>
   <color name="colorWindowBackground">@color/white</color>
+  <color name="colorHomeHeader">@color/dark</color>
+  <color name="colorStatusBar">@color/lightDark</color>
+  <color name="colorControlDisabled">@color/lightGray</color>
   <color name="colorAlertButton">@color/white</color>
   <color name="colorBottomSheetBackground">@color/white</color>
 </resources>
