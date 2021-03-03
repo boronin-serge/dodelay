@@ -35,7 +35,7 @@
   <color name="colorPrimaryDark">@color/lightBlue</color>
   <color name="colorWindowBackground">@color/white</color>
   <color name="colorHomeHeader">@color/dark</color>
-  <color name="colorStatusBar">@color/lightDark</color>
+  <color name="colorStatusBar">@color/dark</color>
   <color name="colorAlertButton">@color/dark</color>
   <color name="colorControlDisabled">@color/lightGray</color>
   <color name="colorBottomSheetBackground">@color/white</color>
