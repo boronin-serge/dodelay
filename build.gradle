@@ -3,10 +3,11 @@
 apply from: 'buildsystem/dependencies.gradle'
 
 buildscript {
-  ext.kotlin_version = "1.4.21"
-  ext.gradlePluginVersion = '4.1.1'
-  ext.ktlintGradleVersion = "9.4.1"
+  ext.kotlin_version = "1.4.30"
+  ext.gradlePluginVersion = '4.1.2'
+  ext.ktlintGradleVersion = "10.0.0"
   ext.hiltVersion = "2.31.2-alpha"
+  ext.gradleUpdaterVersion = "0.36.0"
 
   repositories {
     google()
@@ -20,6 +21,7 @@ buildscript {
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     classpath "org.jlleitschuh.gradle:ktlint-gradle:$ktlintGradleVersion"
     classpath "com.google.dagger:hilt-android-gradle-plugin:$hiltVersion"
+    classpath "com.github.ben-manes:gradle-versions-plugin:$gradleUpdaterVersion"
     // NOTE: Do not place your application dependencies here; they belong
     // in the individual module build.gradle files
   }
@@ -30,3 +32,4 @@ task clean(type: Delete) {
 }
 
 apply plugin: "org.jlleitschuh.gradle.ktlint"
+apply plugin: "com.github.ben-manes.versions"
